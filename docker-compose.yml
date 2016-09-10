@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  master:
+    image: ranjandas/docker-hadoop-1.0.4 
+    container_name: master.example.com
+    hostname: master
+    domainname: example.com
+    privileged: true
+    environment:
+      - ROLE=master
+    volumes:
+      - ./files/etc/hadoop:/etc/hadoop:Z
+
+  agent:
+    image: ranjandas/docker-hadoop-1.0.4
+    domainname: example.com
+    privileged: true
+    environment:
+      - ROLE=slave
+    volumes:
+      - ./files/etc/hadoop:/etc/hadoop:Z

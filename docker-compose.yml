@@ -7,6 +7,12 @@ services:
     hostname: master
     domainname: example.com
     privileged: true
+    ports:
+      - 50030:50030
+      - 50070:50070
+      - 50090:50090
+      - 9000:9000
+      - 9001:9001
     environment:
       - ROLE=master
     volumes:
@@ -16,6 +22,11 @@ services:
     image: ranjandas/docker-hadoop-1.0.4
     domainname: example.com
     privileged: true
+    ports:
+      - 50020:50020
+      - 50060:50060
+      - 50010:50010
+      - 50075:50075
     environment:
       - ROLE=slave
     volumes:

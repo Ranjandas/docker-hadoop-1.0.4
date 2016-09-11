@@ -23,10 +23,10 @@ services:
     domainname: example.com
     privileged: true
     ports:
-      - 50020:50020
-      - 50060:50060
-      - 50010:50010
-      - 50075:50075
+      - 50020
+      - 50060
+      - 50010
+      - 50075
     environment:
       - ROLE=slave
     volumes:

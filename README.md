@@ -36,3 +36,16 @@ To run docker 1.0.4 on hadoop follow the below steps.
   Namenode Web UI : http://<master container ip>:50070
   Jobtracker Web UI : http://<master container ip>:50030
   ```
+
+* Scaling the slave containers
+
+  You can scale up and down the slave containers as shown below.
+
+  ```
+    docker-compose scale agent=<number of agents>
+  ```
+  For example if you want 5 slave (tasktracker + datanode) you can execute the below command
+
+  ```
+    docker-compose scale agent=5
+  ```
